@@ -34,5 +34,8 @@ class BasicCache(BaseCaching):
             Return:
                 value of the key
         """
-        valuecache = self.cache_data.get(key)
-        return valuecache
+        if key or self.cache_data.get(key) is not None:
+            valuecache = self.cache_data.get(key)
+            return valuecache
+        else:
+            return None
