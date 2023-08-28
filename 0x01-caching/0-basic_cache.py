@@ -21,10 +21,8 @@ class BasicCache(BaseCaching):
                 key: of the dict
                 item: value of the key
         """
-        if key or item is not None:
+        if key is not None or item is not None:
             self.cache_data[key] = item
-
-        return
 
     def get(self, key):
         """
