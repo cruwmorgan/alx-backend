@@ -26,7 +26,7 @@ class LRUCache(BaseCaching):
                 key: of the dict
                 item: value of the key
         """
-        if key or item is not None:
+        if key and item is not None:
             valuecache = self.get(key)
             # Make a new
             if valuecache is None:
