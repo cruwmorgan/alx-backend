@@ -17,11 +17,13 @@ function setNewSchool(schoolName, value) {
     });
 }
 
-function displaySchoolValue(schoolName) {
+const displaySchoolValue = async (schoolName) => {
   const reply = await newGet(schoolName);
   console.log(reply);
 }
 
-displaySchoolValue('Holberton');
-setNewSchool('HolbertonSanFrancisco', '100');
-displaySchoolValue('HolbertonSanFrancisco');
+(async() => {
+  await displaySchoolValue('Holberton');
+  setNewSchool('HolbertonSanFrancisco', '100');
+  await displaySchoolValue('HolbertonSanFrancisco');
+})();
